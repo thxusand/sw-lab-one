@@ -1,0 +1,39 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/Cade> a foaf:Person ;
+    schema1:educationalCredentialAwarded "Bachelor in Biology from UC Berkeley (2011)"^^xsd:string ;
+    foaf:based_near "1516 Henry Street, Berkeley, CA 94709, USA",
+        "Germany" ;
+    foaf:knows <http://example.org/Emma> ;
+    foaf:name "Cade" ;
+    foaf:pastProject "Canada",
+        "France" ;
+    foaf:topic_interest "Birds",
+        "Ecology",
+        "Environment",
+        "Photography",
+        "Travel" .
+
+<http://example.org/Meeting_Paris_2014> rdfs:label "Cade met Emma in Paris in August 2014" .
+
+<http://example.org/Emma> a foaf:Person ;
+    schema1:educationalCredentialAwarded "Master in Chemistry from University of Valencia (2015)"^^xsd:string ;
+    foaf:age 36 ;
+    foaf:based_near "Carrer de la Guardia Civil 20, 46020 Valencia, Spain" ;
+    foaf:name "Emma" ;
+    foaf:pastProject "Denmark",
+        "France",
+        "Germany",
+        "Italy",
+        "Portugal",
+        "Sweden" ;
+    foaf:topic_interest "Air Pollution",
+        "Cycling",
+        "Music",
+        "Toxic Waste",
+        "Travel",
+        "Waste Management" .
+

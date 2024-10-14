@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Приклад анотацій RDF</title>
+
+    <!-- JSON-LD анотація -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "Book",
+            "name": "Кобзар",
+            "author": {
+                "@type": "Person",
+                "name": "Тарас Григорович Шевченко"
+            },
+            "datePublished": "1840",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Приватна друкарня Є. Ф. Фішера"
+            }
+        }
+    </script>
+    <style>
+        th {
+            font-weight: normal;
+        }
+        h2 {
+            margin: 0 0 15px;
+            text-align: center;
+            font-size: 18px;
+            background: #eee;
+        }
+    </style>
+</head>
+<body style="margin: 50px; font-family: sans-serif">
+    <h1 style="text-align: center; font-family: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif Pro', serif; font-weight: 500">Кобзар (збірка)</h1>
+    <div style="width: min-content; margin: 0 auto">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/1840_-_Kobzar_-_page_3_-_page_1_%28Title%29_-.jpg/330px-1840_-_Kobzar_-_page_3_-_page_1_%28Title%29_-.jpg" alt="KOBZAR" />
+        <p style="margin-top: 10px; text-align: center; background: none"><i>Форзац і перша сторінка видання 1840 року (першого)</i></p>
+    </div>
+
+    <div style="display: flex; gap: 100px; justify-content: center; margin-top: 50px">
+
+        <!-- Microdata анотація -->
+        <div style="padding: 15px; background: #f8f9fa; border: 1px solid #a2a9b1" itemscope itemtype="https://schema.org/Book">
+            <h2>Microdata анотація</h2>
+            <table>
+                <tbody style="text-align: left">
+                    <tr>
+                        <th style="background: #eee"><strong>Назва:</strong></th>
+                        <th style="padding-left: 10px"><span itemprop="name">Кобзар</span></th>
+                    </tr>
+                    <tr>
+                        <th style="background: #eee"><strong>Автор:</strong></th>
+                        <th style="padding-left: 10px">
+                            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                <span itemprop="name">Тарас Григорович Шевченко</span>
+                             </span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="background: #eee"><strong>Дата публікації:</strong></th>
+                        <th style="padding-left: 10px"><span itemprop="datePublished">1840</span></th>
+                    </tr>
+                    <tr>
+                        <th style="background: #eee"><strong>Видавництво:</strong></th>
+                        <th style="padding-left: 10px">
+                            <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                                <span itemprop="name">Приватна друкарня Є. Ф. Фішера</span>
+                            </span>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Типу JSON-LD анотація -->
+        <div style="width: min-content; min-width: 250px">
+            <p style="opacity: 0.2">Десь тут анотація JSON-LD</p>
+        </div>
+
+        <!-- RDFa анотація -->
+        <div style="padding: 15px; background: #f8f9fa; border: 1px solid #a2a9b1" vocab="https://schema.org/" typeof="Book">
+            <h2>RDFa анотація</h2>
+            <table>
+                <tbody style="text-align: left">
+                    <tr>
+                        <th style="background: #eee"><strong>Назва:</strong></th>
+                        <th style="padding-left: 10px">
+                            <span property="name">Кобзар</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="background: #eee"><strong>Автор:</strong></th>
+                        <th style="padding-left: 10px">
+                            <span property="author" typeof="Person">
+                                <span property="name">Тарас Григорович Шевченко</span>
+                            </span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="background: #eee"><strong>Дата публікації:</strong></th>
+                        <th style="padding-left: 10px">
+                            <span property="datePublished">1840</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="background: #eee"><strong>Видавництво:</strong></th>
+                        <th style="padding-left: 10px">
+                            <span property="publisher" typeof="Organization">
+                                <span property="name">Приватна друкарня Є. Ф. Фішера</span>
+                            </span>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
